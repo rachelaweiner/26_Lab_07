@@ -1,7 +1,7 @@
 ---
 title: "Lab 07 - Conveying the right message through visualisation"
-author: "Insert your name here"
-date: "Insert date here"
+author: "Rachel Weiner"
+date: "February 19, 2026"
 output: github_document
 ---
 
@@ -13,13 +13,94 @@ library(tidyverse)
 
 ### Exercise 1
 
-Remove this text, and add your answer for Exercise 1 here.
-Add code chunks as needed.
-Don't forget to label your code chunk.
-Do not use spaces in code chunk labels.
+```{r create_dataset}
+Covid_mask <- tribble(
+  ~date, ~count, ~mask,
+  "7/13/2020", 22, "mask",
+  "7/13/2020", 9, "no mask",
+  "7/14/2020", 20, "mask",
+  "7/14/2020", 9, "no mask",
+  "7/15/2020", 20, "mask",
+  "7/15/2020", 9, "no mask",
+  "7/16/2020", 20, "mask",
+  "7/16/2020", 10, "no mask",
+  "7/17/2020", 20, "mask",
+  "7/17/2020", 10, "no mask",
+  "7/18/2020", 20, "mask",
+  "7/18/2020", 9, "no mask",
+  "7/19/2020", 20, "mask",
+  "7/19/2020", 9, "no mask",
+  "7/20/2020", 20, "mask",
+  "7/20/2020", 9, "no mask",
+  "7/21/2020", 21, "mask",
+  "7/21/2020", 8, "no mask",
+  "7/22/2020", 21, "mask",
+  "7/22/2020", 8, "no mask",
+  "7/23/2020", 20, "mask",
+  "7/23/2020", 9, "no mask",
+  "7/24/2020", 20, "mask",
+  "7/24/2020", 9, "no mask",
+  "7/25/2020", 20, "mask",
+  "7/25/2020", 10, "no mask",
+  "7/26/2020", 19, "mask",
+  "7/26/2020", 10, "no mask",
+  "7/27/2020", 18, "mask",
+  "7/27/2020", 10, "no mask",
+  "7/28/2020", 17, "mask",
+  "7/28/2020", 9, "no mask",
+  "7/29/2020", 16, "mask",
+  "7/29/2020", 9, "no mask",
+  "7/30/2020", 16, "mask",
+  "7/30/2020", 10, "no mask",
+  "7/31/2020", 16, "mask",
+  "7/31/2020", 9, "no mask",
+  "8/1/2020", 16, "mask",
+  "8/1/2020", 9, "no mask",
+  "8/2/2020", 16, "mask",
+  "8/2/2020", 9, "no mask",
+  "8/3/2020", 16, "mask",
+  "8/3/2020", 9, "no mask")
+```
 
 ### Exercise 2
 
-...
+```{r geom_point}
+Covid_mask %>%
+  ggplot(aes(x = date, y = count, color = mask)) +
+  geom_point() +
+  geom_line(aes(group = mask)) +
+  labs(title = "COVID-19 Average of Daily Cases/Per 100K Population", subtitle = "Mask Counties Vs. No-Mask Mandate Counties in Kansas", color = "Mask Mandate")
+```
 
-Add exercise headings as needed.
+### Exercise 3
+
+There is a much more clear message that an effect is present regarding mask mandates on average covid-19 cases in Kansas counties. The red line represents cases in mask-mandated counties whereas the blue line indicates cases in non-mask mandated counties. You can much more clearly identify the apparent trend in data not clear in the original visualization. This is because the original visualization had two different y-axis's that were not on the same scale, scewing the perception of the graph. 
+
+Though average cases are higher in mask-mandated counties, there is a general decline in cases, potentially due to the mandate, that is not present in non-mask mandated counties. 
+
+### Exercise 4
+
+This data and visualization tell us that mask wearing (or lack thereof) does have an effect on Covid-19 cases. This visualization does not inherently line up with what I know about mask-wearing as it appears there are greater numbers of cases in mask-wearing counties. Though I know that mask-wearing was incredibly beneficial in limiting the spread of Covid-19. There is a general decline towards the latter end of the visualization which shows that a decrease in cases did happen, potentially due to the mask mandate as there was no general decline in non-mask mandated counties. 
+
+### Exercise 5
+
+The axes and scales they are based on play a huge role in data visualization as our eyes perceive certain declines and inclines differently than we do when conceptual numbers are not inherently visible or intuitive, as in the original visualization. 
+
+The type of visualization is also incredibly important for conveying a clear message. In this context, a scatter plot with precise data points are ideal to help depict the general trend across counties. 
+
+### Exercise 6
+
+For my opposite visualization, I plan to convey a confusing depiction of the data that does not accurately portray the data in a clear way. I will do so by adjusting what variables are depicted and choosing an alternative visualization
+
+### Exercise 7
+
+```{r}
+Covid_mask %>%
+  ggplot(aes(x = mask, fill = count)) +
+  geom_bar() +
+  labs(title = "Average Cases in Kansas Counites",
+       subtitle = "Mask Counties Vs. No-Mask Mandate Counties")
+```
+
+This visualization depicts the number of average cases with the mask-mandated counties and non-mask mandated counties side by side. This particular visualization is misleading because it depicts the number of cases as even, not showing an effect of mask-wearing by date or in general
+
