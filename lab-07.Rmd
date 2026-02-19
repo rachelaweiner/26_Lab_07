@@ -90,7 +90,7 @@ The type of visualization is also incredibly important for conveying a clear mes
 
 ### Exercise 6
 
-For my opposite visualization, I plan to convey a confusing depiction of the data that does not accurately portray the data in a clear way. I will do so by adjusting what variables are depicted and choosing an alternative visualization
+For my opposite visualization, I plan to convey a confusing depiction of the data that does not accurately portray the data in a clear way. I will do so by adjusting what variables are depicted and choosing an alternative visualization.
 
 ### Exercise 7
 

@@ -115,7 +115,7 @@ are ideal to help depict the general trend across counties.
 For my opposite visualization, I plan to convey a confusing depiction of
 the data that does not accurately portray the data in a clear way. I
 will do so by adjusting what variables are depicted and choosing an
-alternative visualization
+alternative visualization.
 
 ### Exercise 7
 
