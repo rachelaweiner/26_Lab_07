@@ -139,4 +139,6 @@ This visualization depicts the number of average cases with the
 mask-mandated counties and non-mask mandated counties side by side. This
 particular visualization is misleading because it depicts the number of
 cases as even, not showing an effect of mask-wearing by date or in
-general
+general. This visualization does not convey the correct message, even
+though it is based on the same data as the previous visualization.
+Therefore, it is very misleading.
